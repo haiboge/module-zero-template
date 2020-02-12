@@ -86,6 +86,7 @@ namespace AbpCompanyName.AbpProjectName.WebMpa
                         "~/lib/jquery-slimscroll/jquery.slimscroll.js",
                         "~/lib/Waves/dist/waves.js",
                         "~/lib/push.js/push.js",
+                        "~/lib/jquery.serializejson/jquery.serializejson.js",
                         "~/Abp/Framework/scripts/abp.js",
                         "~/Abp/Framework/scripts/libs/abp.jquery.js",
                         "~/Abp/Framework/scripts/libs/abp.toastr.js",
@@ -94,8 +95,8 @@ namespace AbpCompanyName.AbpProjectName.WebMpa
                         "~/Abp/Framework/scripts/libs/abp.sweet-alert.js",
                         "~/js/admin.js",
                         "~/js/main.js",
-                        "~/Views/Shared/_Layout.js",
-                        "~/lib/signalr/jquery.signalR.js"
+                        "~/Scripts/jquery.signalR-2.4.1.js",
+                        "~/Views/Shared/_Layout.js"
                     )
                 );
 

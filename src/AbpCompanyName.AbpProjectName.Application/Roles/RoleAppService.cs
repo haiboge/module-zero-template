@@ -41,7 +41,7 @@ namespace AbpCompanyName.AbpProjectName.Roles
             _roleRepository = roleRepository;
         }
 
-        public override async Task<RoleDto> Create(CreateRoleDto input)
+        public override async Task<RoleDto> CreateAsync(CreateRoleDto input)
         {
             CheckCreatePermission();
 
@@ -49,9 +49,11 @@ namespace AbpCompanyName.AbpProjectName.Roles
 
             CheckErrors(await _roleManager.CreateAsync(role));
 
+            UnitOfWorkManager.Current.SaveChanges();
+
             var grantedPermissions = PermissionManager
                 .GetAllPermissions()
-                .Where(p => input.Permissions.Contains(p.Name))
+                .Where(p => input.GrantedPermissions.Contains(p.Name))
                 .ToList();
 
             await _roleManager.SetGrantedPermissionsAsync(role, grantedPermissions);
@@ -59,7 +61,7 @@ namespace AbpCompanyName.AbpProjectName.Roles
             return MapToEntityDto(role);
         }
 
-        public override async Task<RoleDto> Update(RoleDto input)
+        public override async Task<RoleDto> UpdateAsync(RoleDto input)
         {
             CheckUpdatePermission();
 
@@ -71,7 +73,7 @@ namespace AbpCompanyName.AbpProjectName.Roles
 
             var grantedPermissions = PermissionManager
                 .GetAllPermissions()
-                .Where(p => input.Permissions.Contains(p.Name))
+                .Where(p => input.GrantedPermissions.Contains(p.Name))
                 .ToList();
 
             await _roleManager.SetGrantedPermissionsAsync(role, grantedPermissions);
@@ -79,7 +81,7 @@ namespace AbpCompanyName.AbpProjectName.Roles
             return MapToEntityDto(role);
         }
 
-        public override async Task Delete(EntityDto<int> input)
+        public override async Task DeleteAsync(EntityDto<int> input)
         {
             CheckDeletePermission();
 

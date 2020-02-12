@@ -86,7 +86,8 @@ namespace AbpCompanyName.AbpProjectName.WebSpaAngular
                         "~/lib/jquery-slimscroll/jquery.slimscroll.js",
                         "~/lib/Waves/dist/waves.js",
                         "~/lib/push.js/push.js",
-                      
+                        "~/lib/jquery.serializejson/jquery.serializejson.js",
+
                         "~/Scripts/angular.min.js",
                         "~/Scripts/angular-animate.min.js",
                         "~/Scripts/angular-sanitize.min.js",
@@ -104,9 +105,8 @@ namespace AbpCompanyName.AbpProjectName.WebSpaAngular
                         "~/Abp/Framework/scripts/libs/angularjs/abp.ng.js",
 
                         "~/js/admin.js",
-                        "~/js/main.js",
-
-                        "~/Scripts/jquery.signalR-2.2.2.min.js"
+                        "~/Scripts/jquery.signalR-2.4.1.min.js",
+                        "~/js/main.js"
                     )
                 );
 

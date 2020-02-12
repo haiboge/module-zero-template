@@ -29,10 +29,10 @@
             var userId = $(this).attr("data-user-id");
 
             e.preventDefault();
-            $.ajax({
+            abp.ajax({
                 url: abp.appPath + 'Users/EditUserModal?userId=' + userId,
                 type: 'POST',
-                contentType: 'application/html',
+                dataType: 'html',
                 success: function (content) {
                     $('#UserEditModal div.modal-content').html(content);
                 },
